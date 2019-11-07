@@ -3,7 +3,11 @@
 --- !u!129 &1
 PlayerSettings:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   serializedVersion: 18
+=======
+  serializedVersion: 15
+>>>>>>> 79206fe1290afa8131ea4c295d62e41aa51fc312
   productGUID: 50e7c0a26a18540bc8d988f42e6efdc2
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
@@ -52,6 +56,10 @@ PlayerSettings:
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
+<<<<<<< HEAD
+=======
+  iosAppInBackgroundBehavior: 0
+>>>>>>> 79206fe1290afa8131ea4c295d62e41aa51fc312
   displayResolutionDialog: 1
   iosUseCustomAppBackgroundBehavior: 0
   iosAllowHTTPDownload: 1
@@ -63,9 +71,12 @@ PlayerSettings:
   use32BitDisplayBuffer: 1
   preserveFramebufferAlpha: 0
   disableDepthAndStencilBuffers: 0
+<<<<<<< HEAD
   androidStartInFullscreen: 1
   androidRenderOutsideSafeArea: 1
   androidUseSwappy: 0
+=======
+>>>>>>> 79206fe1290afa8131ea4c295d62e41aa51fc312
   androidBlitType: 0
   defaultIsNativeResolution: 1
   macRetinaSupport: 1
@@ -94,12 +105,22 @@ PlayerSettings:
   visibleInBackground: 1
   allowFullscreenSwitch: 1
   graphicsJobMode: 0
+<<<<<<< HEAD
   fullscreenMode: 2
+=======
+  fullscreenMode: 1
+>>>>>>> 79206fe1290afa8131ea4c295d62e41aa51fc312
   xboxSpeechDB: 0
   xboxEnableHeadOrientation: 0
   xboxEnableGuest: 0
   xboxEnablePIXSampling: 0
   metalFramebufferOnly: 0
+<<<<<<< HEAD
+=======
+  n3dsDisableStereoscopicView: 0
+  n3dsEnableSharedListOpt: 1
+  n3dsEnableVSync: 0
+>>>>>>> 79206fe1290afa8131ea4c295d62e41aa51fc312
   xboxOneResolution: 0
   xboxOneSResolution: 0
   xboxOneXResolution: 3
@@ -107,6 +128,7 @@ PlayerSettings:
   xboxOneLoggingLevel: 1
   xboxOneDisableEsram: 0
   xboxOnePresentImmediateThreshold: 0
+<<<<<<< HEAD
   switchQueueCommandMemory: 1048576
   switchQueueControlMemory: 16384
   switchQueueComputeMemory: 262144
@@ -114,6 +136,14 @@ PlayerSettings:
   switchNVNDefaultPoolsGranularity: 16777216
   switchNVNOtherPoolsGranularity: 16777216
   vulkanEnableSetSRGBWrite: 0
+=======
+  switchQueueCommandMemory: 0
+  videoMemoryForVertexBuffers: 0
+  psp2PowerMode: 0
+  psp2AcquireBGM: 1
+  vulkanEnableSetSRGBWrite: 0
+  vulkanUseSWCommandBuffers: 0
+>>>>>>> 79206fe1290afa8131ea4c295d62e41aa51fc312
   m_SupportedAspectRatios:
     4:3: 1
     5:4: 1
@@ -126,7 +156,8 @@ PlayerSettings:
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
   xboxOneDisableKinectGpuReservation: 0
-  xboxOneEnable7thCore: 0
+  xboxOneEnable7thCore: 1
+  isWsaHolographicRemotingEnabled: 0
   vrSettings:
     cardboard:
       depthFormat: 0
@@ -140,6 +171,7 @@ PlayerSettings:
       maximumSupportedHeadTracking: 1
     hololens:
       depthFormat: 1
+<<<<<<< HEAD
       depthBufferSharingEnabled: 1
     lumin:
       depthFormat: 0
@@ -155,6 +187,13 @@ PlayerSettings:
       v2Signing: 0
     enable360StereoCapture: 0
   isWsaHolographicRemotingEnabled: 0
+=======
+      depthBufferSharingEnabled: 0
+    oculus:
+      sharedDepthBuffer: 0
+      dashSupport: 0
+    enable360StereoCapture: 0
+>>>>>>> 79206fe1290afa8131ea4c295d62e41aa51fc312
   protectGraphicsMemory: 0
   enableFrameTimingStats: 0
   useHDRDisplay: 0
@@ -163,8 +202,18 @@ PlayerSettings:
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
+<<<<<<< HEAD
   applicationIdentifier: {}
   buildNumber: {}
+=======
+  applicationIdentifier:
+    Android: com.Company.ProductName
+    Standalone: unity.DefaultCompany.WIEBouncingBall
+    iOS: com.Company.ProductName
+    tvOS: com.Company.ProductName
+  buildNumber:
+    iOS: 0
+>>>>>>> 79206fe1290afa8131ea4c295d62e41aa51fc312
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
@@ -181,7 +230,11 @@ PlayerSettings:
   StripUnusedMeshComponents: 0
   VertexChannelCompressionMask: 214
   iPhoneSdkVersion: 988
+<<<<<<< HEAD
   iOSTargetOSVersionString: 9.0
+=======
+  iOSTargetOSVersionString: 8.0
+>>>>>>> 79206fe1290afa8131ea4c295d62e41aa51fc312
   tvOSSdkVersion: 0
   tvOSRequireExtendedGameController: 0
   tvOSTargetOSVersionString: 9.0
@@ -240,9 +293,9 @@ PlayerSettings:
   iOSURLSchemes: []
   iOSBackgroundModes: 0
   iOSMetalForceHardShadows: 0
-  metalEditorSupport: 0
+  metalEditorSupport: 1
   metalAPIValidation: 1
-  iOSRenderExtraFrameOnPause: 0
+  iOSRenderExtraFrameOnPause: 1
   appleDeveloperTeamID: 
   iOSManualSigningProvisioningProfileID: 
   tvOSManualSigningProvisioningProfileID: 
@@ -250,8 +303,13 @@ PlayerSettings:
   tvOSManualSigningProvisioningProfileType: 0
   appleEnableAutomaticSigning: 0
   iOSRequireARKit: 0
+<<<<<<< HEAD
   iOSAutomaticallyDetectAndAddCapabilities: 1
   appleEnableProMotion: 0
+=======
+  appleEnableProMotion: 0
+  vulkanEditorSupport: 0
+>>>>>>> 79206fe1290afa8131ea4c295d62e41aa51fc312
   clonedFromGUID: 00000000000000000000000000000000
   templatePackageId: 
   templateDefaultScene: 
@@ -266,7 +324,10 @@ PlayerSettings:
   AndroidEnableTango: 0
   androidEnableBanner: 1
   androidUseLowAccuracyLocation: 0
+<<<<<<< HEAD
   androidUseCustomKeystore: 0
+=======
+>>>>>>> 79206fe1290afa8131ea4c295d62e41aa51fc312
   m_AndroidBanners:
   - width: 320
     height: 180
@@ -280,10 +341,14 @@ PlayerSettings:
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []
   m_BuildTargetVRSettings: []
+  m_BuildTargetEnableVuforiaSettings: []
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
+<<<<<<< HEAD
   openGLRequireES32: 0
   vuforiaEnabled: 0
+=======
+>>>>>>> 79206fe1290afa8131ea4c295d62e41aa51fc312
   m_TemplateCustomTags: {}
   mobileMTRendering:
     iPhone: 1
@@ -377,7 +442,7 @@ PlayerSettings:
   switchAccessibleURLs: 
   switchLegalInformation: 
   switchMainThreadStackSize: 1048576
-  switchPresenceGroupId: 0x01004b9000490000
+  switchPresenceGroupId: 
   switchLogoHandling: 0
   switchReleaseVersion: 0
   switchDisplayVersion: 1.0.0
@@ -389,8 +454,8 @@ PlayerSettings:
   switchUserAccountSaveDataSize: 0
   switchUserAccountSaveDataJournalSize: 0
   switchApplicationAttribute: 0
-  switchCardSpecSize: 4
-  switchCardSpecClock: 25
+  switchCardSpecSize: -1
+  switchCardSpecClock: -1
   switchRatingsMask: 0
   switchRatingsInt_0: 0
   switchRatingsInt_1: 0
@@ -404,7 +469,7 @@ PlayerSettings:
   switchRatingsInt_9: 0
   switchRatingsInt_10: 0
   switchRatingsInt_11: 0
-  switchLocalCommunicationIds_0: 0x01004b9000490000
+  switchLocalCommunicationIds_0: 
   switchLocalCommunicationIds_1: 
   switchLocalCommunicationIds_2: 
   switchLocalCommunicationIds_3: 
@@ -447,7 +512,7 @@ PlayerSettings:
   ps4VideoOutPixelFormat: 0
   ps4VideoOutInitialWidth: 1920
   ps4VideoOutBaseModeInitialWidth: 1920
-  ps4VideoOutReprojectionRate: 120
+  ps4VideoOutReprojectionRate: 60
   ps4PronunciationXMLPath: 
   ps4PronunciationSIGPath: 
   ps4BackgroundImagePath: 
@@ -480,13 +545,16 @@ PlayerSettings:
   ps4pnGameCustomData: 1
   playerPrefsSupport: 0
   enableApplicationExit: 0
+<<<<<<< HEAD
   resetTempFolder: 1
+=======
+>>>>>>> 79206fe1290afa8131ea4c295d62e41aa51fc312
   restrictedAudioUsageRights: 0
   ps4UseResolutionFallback: 0
   ps4ReprojectionSupport: 0
   ps4UseAudio3dBackend: 0
   ps4SocialScreenEnabled: 0
-  ps4ScriptOptimizationLevel: 0
+  ps4ScriptOptimizationLevel: 2
   ps4Audio3dVirtualSpeakerCount: 14
   ps4attribCpuUsage: 0
   ps4PatchPkgPath: 
@@ -504,6 +572,56 @@ PlayerSettings:
   ps4attribEyeToEyeDistanceSettingVR: 0
   ps4IncludedModules: []
   monoEnv: 
+<<<<<<< HEAD
+=======
+  psp2Splashimage: {fileID: 0}
+  psp2NPTrophyPackPath: 
+  psp2NPSupportGBMorGJP: 0
+  psp2NPAgeRating: 12
+  psp2NPTitleDatPath: 
+  psp2NPCommsID: 
+  psp2NPCommunicationsID: 
+  psp2NPCommsPassphrase: 
+  psp2NPCommsSig: 
+  psp2ParamSfxPath: 
+  psp2ManualPath: 
+  psp2LiveAreaGatePath: 
+  psp2LiveAreaBackroundPath: 
+  psp2LiveAreaPath: 
+  psp2LiveAreaTrialPath: 
+  psp2PatchChangeInfoPath: 
+  psp2PatchOriginalPackage: 
+  psp2PackagePassword: dNMK66MuCV6GXi5xr84P2R391UXaLHba
+  psp2KeystoneFile: 
+  psp2MemoryExpansionMode: 0
+  psp2DRMType: 0
+  psp2StorageType: 0
+  psp2MediaCapacity: 0
+  psp2DLCConfigPath: 
+  psp2ThumbnailPath: 
+  psp2BackgroundPath: 
+  psp2SoundPath: 
+  psp2TrophyCommId: 
+  psp2TrophyPackagePath: 
+  psp2PackagedResourcesPath: 
+  psp2SaveDataQuota: 10240
+  psp2ParentalLevel: 1
+  psp2ShortTitle: Not Set
+  psp2ContentID: IV0000-ABCD12345_00-0123456789ABCDEF
+  psp2Category: 0
+  psp2MasterVersion: 01.00
+  psp2AppVersion: 01.00
+  psp2TVBootMode: 0
+  psp2EnterButtonAssignment: 2
+  psp2TVDisableEmu: 0
+  psp2AllowTwitterDialog: 1
+  psp2Upgradable: 0
+  psp2HealthWarning: 0
+  psp2UseLibLocation: 0
+  psp2InfoBarOnStartup: 0
+  psp2InfoBarColor: 0
+  psp2ScriptOptimizationLevel: 2
+>>>>>>> 79206fe1290afa8131ea4c295d62e41aa51fc312
   splashScreenBackgroundSourceLandscape: {fileID: 0}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
   blurSplashScreenBackground: 1
@@ -520,6 +638,7 @@ PlayerSettings:
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 1
   webGLLinkerTarget: 1
+<<<<<<< HEAD
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
   scriptingDefineSymbols: {}
@@ -527,6 +646,19 @@ PlayerSettings:
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
   managedStrippingLevel: {}
+=======
+  scriptingDefineSymbols: {}
+  platformArchitecture:
+    iOS: 2
+  scriptingBackend:
+    Android: 0
+    Metro: 2
+    Standalone: 0
+    WP8: 2
+    WebGL: 1
+    iOS: 1
+  il2cppCompilerConfiguration: {}
+>>>>>>> 79206fe1290afa8131ea4c295d62e41aa51fc312
   incrementalIl2cppBuild: {}
   allowUnsafeCode: 0
   additionalIl2CppArgs: 
@@ -563,6 +695,21 @@ PlayerSettings:
   metroFTAName: 
   metroFTAFileTypes: []
   metroProtocolName: 
+<<<<<<< HEAD
+=======
+  metroCompilationOverrides: 1
+  n3dsUseExtSaveData: 0
+  n3dsCompressStaticMem: 1
+  n3dsExtSaveDataNumber: 0x12345
+  n3dsStackSize: 131072
+  n3dsTargetPlatform: 2
+  n3dsRegion: 7
+  n3dsMediaSize: 0
+  n3dsLogoStyle: 3
+  n3dsTitle: GameName
+  n3dsProductCode: 
+  n3dsApplicationId: 0xFF3FF
+>>>>>>> 79206fe1290afa8131ea4c295d62e41aa51fc312
   XboxOneProductId: 
   XboxOneUpdateKey: 
   XboxOneSandboxId: 
@@ -587,12 +734,17 @@ PlayerSettings:
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
   XboxOneXTitleMemory: 8
+<<<<<<< HEAD
   xboxOneScriptCompiler: 1
   XboxOneOverrideIdentityName: 
+=======
+  xboxOneScriptCompiler: 0
+>>>>>>> 79206fe1290afa8131ea4c295d62e41aa51fc312
   vrEditorSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
+<<<<<<< HEAD
   cloudServicesEnabled:
     UNet: 1
   luminIcon:
@@ -606,6 +758,9 @@ PlayerSettings:
   luminVersion:
     m_VersionCode: 1
     m_VersionName: 
+=======
+  cloudServicesEnabled: {}
+>>>>>>> 79206fe1290afa8131ea4c295d62e41aa51fc312
   facebookSdkVersion: 7.9.4
   facebookAppId: 
   facebookCookies: 1
