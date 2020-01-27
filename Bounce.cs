@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bounce : MonoBehaviour {
 
-
+        // This is my project WIE
 	//Position is based on Gravity and Velocity
 	//yPosistion = Vi(t) + 1/2at^2 
 	//Think this as 3 dimension variable.  XYZ
