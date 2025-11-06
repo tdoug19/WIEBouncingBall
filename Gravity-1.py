@@ -13,23 +13,15 @@ ball.shape("circle")
 ball.penup()
 ball.goto(300, 390)
 
-# Physics parameters
-gravity = -9.8        # gravity (m/s^2)
-ballPositionY = 390.0         # starting height
-deltaYPosition = 0.0
-yVelocity = 0.0          # velocity
-dt = 0.05 #50ms
 
+ballPositionY = 390.0         # starting height
 
 def fall():
-    global ballPositionY, deltaYPosition, yVelocity, dt
+    global ballPositionY
 
     while ballPositionY > 0.0:
         
-        # Update physics
-        yVelocity += gravity * dt
-        deltaYPosition = (yVelocity * dt) + (0.5 * gravity * dt *dt)
-        ballPositionY += deltaYPosition
+        ballPositionY -= 0.5
    
         ball.goto(300, ballPositionY)
         screen.update()
