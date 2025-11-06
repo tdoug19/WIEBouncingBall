@@ -23,13 +23,13 @@ running = True
 absorb = 0.8
 
 def fall():
-    global ballPositionY, deltaYPosition, yVelocity, dt, running
+    global ballPositionY, deltaYPosition, yVelocity, running
 
-    while running > 0.0:
+    while running == True:
         
         # Update physics
-        yVelocity += gravity * dt
         deltaYPosition = (yVelocity * dt) + (0.5 * gravity * dt *dt)
+        yVelocity += gravity * dt
         ballPositionY += deltaYPosition
    
         # Bounce check
@@ -38,14 +38,11 @@ def fall():
             yVelocity = -yVelocity * absorb
             if abs(yVelocity) < 1:  # stop when motion is small
                 running = False
-        
-        
+                
         ball.goto(300, ballPositionY)
-        
         screen.update()
     
 screen.tracer(0)
-
 screen.listen()
 screen.onkey(fall, "space")
 turtle.done()
