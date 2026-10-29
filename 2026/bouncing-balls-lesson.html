@@ -157,9 +157,7 @@
     <header>
       <span class="eyebrow">UofR What is Engineering!</span>
       <h1>Software Engineering<br />Applying Science</h1>
-      <p>
-        A 15-minute coding activity for high school students. 
-      </p>
+      <p>A 15-minute coding activity for high school students.</p>
       <p>
         Open
         <a href="https://editor.p5js.org/" target="_blank" rel="noopener"
@@ -171,22 +169,20 @@
         editor needs internet access.
       </p>
     </header>
-    <nav>
-      <a href="#step1">1. Fake gravity</a><a href="#step2">2. Time & physics</a
-      ><a href="#step3">3. Bounce</a><a href="#step4">4. Two balls</a
-      ><a href="#step5">5. Mars</a>
-    </nav>
     <section id="step1">
       <span class="eyebrow">0–3 minutes</span>
-      <h2>1. Fake gravity: move every frame</h2>
+      <h2>1. Let's animate a ball!</h2>
       <p>
         Start with the code below. Click Run. The ball moves down and eventually
         disappears; click Stop, then Run to restart it.
       </p>
       <p>
         The screen’s y coordinate increases downward.
-        <code>circle(200, y, 40)</code> draws a ball at x = 200, with diameter
-        40 pixels. <code>draw()</code> runs repeatedly, once per frame.
+        <code>
+          let ball = { x: 200, y: 60, speed: 0, diameter: 40, colour: "blue" };
+        </code>
+        creates a ball object at x = 200, with diameter 40 pixels.
+        <code> draw() </code> runs repeatedly, once per frame.
       </p>
       <p>
         <strong>Try:</strong> Change <code>frameRate(60)</code> to
@@ -203,18 +199,26 @@
         <span>Complete sketch · replace sketch.js</span
         ><button onclick="copyCode(this)">Copy code</button>
       </div>
-      <pre><code>let y = 60;
+      <pre><code>
+
+let ball = {
+  x: 200,
+  y: 60,
+  speed: 0,
+  diameter: 40,
+  colour: "blue"
+};
 
 function setup() {
-  createCanvas(600, 420);
+  createCanvas(500, 400);
   frameRate(60);
 }
 
 function draw() {
-  background(235);
-  y += 3; // Move 3 pixels every frame
-  fill(&quot;orange&quot;);
-  circle(200, y, 40);
+  background(230);
+  ball.y += 3;  // Move down 3 pixels per frame
+  fill(ball.colour);
+  circle(ball.x, ball.y, ball.diameter);
 }</code></pre>
     </section>
     <section id="step2">
