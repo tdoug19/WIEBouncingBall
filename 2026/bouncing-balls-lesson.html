@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  /><title>Bouncing balls: Earth to Mars</title
+  ><style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: #f4f2ec;
+      color: #203137;
+      font:
+        17px/1.65 system-ui,
+        -apple-system,
+        sans-serif;
+    }
+    main {
+      max-width: 940px;
+      margin: auto;
+      padding: 48px 24px;
+    }
+    header {
+      padding: 24px 0;
+    }
+    h1 {
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin: 18px 0 28px;
+    }
+    h2 {
+      line-height: 1.25;
+      font-size: 28px;
+    }
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: 1.4px;
+      color: #95602d;
+    }
+    a {
+      color: #126d72;
+      overflow-wrap: anywhere;
+    }
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 16px 0 32px;
+    }
+    nav a {
+      border: 1px solid #ccd5cf;
+      border-radius: 24px;
+      padding: 7px 14px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    section {
+      background: white;
+      border: 1px solid #e0e4df;
+      border-radius: 16px;
+      padding: 30px;
+      margin: 22px 0;
+      scroll-margin-top: 20px;
+    }
+    p code {
+      background: #edf1ec;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    pre {
+      margin: 0;
+      background: #142c35;
+      color: #e7f1ed;
+      padding: 24px;
+      border-radius: 0 0 10px 10px;
+      overflow-x: auto;
+      font:
+        14px/1.65 ui-monospace,
+        Menlo,
+        monospace;
+    }
+    .codebar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      background: #23414b;
+      color: #e7f1ed;
+      border-radius: 10px 10px 0 0;
+      padding: 10px 16px;
+      font-size: 13px;
+    }
+    button {
+      cursor: pointer;
+      border: 0;
+      border-radius: 6px;
+      background: #f4c580;
+      color: #172f38;
+      padding: 8px 13px;
+      font-weight: 650;
+    }
+    footer {
+      font-size: 14px;
+      padding: 16px;
+    }
+    @media (max-width: 600px) {
+      main {
+        padding: 20px 12px;
+      }
+      section {
+        padding: 20px 16px;
+      }
+      pre {
+        padding: 16px;
+        font-size: 12px;
+      }
+    }
+    @media print {
+      body {
+        background: white;
+        font-size: 11pt;
+      }
+      main {
+        padding: 0;
+        max-width: none;
+      }
+      section {
+        break-before: page;
+        border: 0;
+        padding: 0;
+      }
+      nav,
+      button {
+        display: none;
+      }
+      pre {
+        white-space: pre-wrap;
+        background: #f4f4f4;
+        color: black;
+        font-size: 9pt;
+      }
+      .codebar {
+        background: #eee;
+        color: black;
+      }
+      h1 {
+        font-size: 36pt;
+      }
+    }
+  </style>
+  <main>
+    <header>
+      <span class="eyebrow">UofR What is Engineering!</span>
+      <h1>Software Engineering<br />Applying Science</h1>
+      <p>
+        A 15-minute coding activity for high school students. 
+      </p>
+      <p>
+        Open
+        <a href="https://editor.p5js.org/" target="_blank" rel="noopener"
+          >https://editor.p5js.org/</a
+        >
+        in Safari. Replace everything in <code>sketch.js</code> with the code
+        for the current stage, then click ▶ Run. Click Stop and Run to reset an
+        experiment. The lesson file itself works offline; the online p5.js
+        editor needs internet access.
+      </p>
+    </header>
+    <nav>
+      <a href="#step1">1. Fake gravity</a><a href="#step2">2. Time & physics</a
+      ><a href="#step3">3. Bounce</a><a href="#step4">4. Two balls</a
+      ><a href="#step5">5. Mars</a>
+    </nav>
+    <section id="step1">
+      <span class="eyebrow">0–3 minutes</span>
+      <h2>1. Fake gravity: move every frame</h2>
+      <p>
+        Start with the code below. Click Run. The ball moves down and eventually
+        disappears; click Stop, then Run to restart it.
+      </p>
+      <p>
+        The screen’s y coordinate increases downward.
+        <code>circle(200, y, 40)</code> draws a ball at x = 200, with diameter
+        40 pixels. <code>draw()</code> runs repeatedly, once per frame.
+      </p>
+      <p>
+        <strong>Try:</strong> Change <code>frameRate(60)</code> to
+        <code>frameRate(30)</code> and restart. At 60 frames per second, 3
+        pixels per frame means 180 pixels per second. At 30 frames per second,
+        it means 90 pixels per second. These are target frame rates; the
+        computer may run slower.
+      </p>
+      <p>
+        <strong>Ask:</strong> Does a dropped ball really fall at a constant
+        speed? Why did changing the frame rate change our ball’s motion?
+      </p>
+      <div class="codebar">
+        <span>Complete sketch · replace sketch.js</span
+        ><button onclick="copyCode(this)">Copy code</button>
+      </div>
+      <pre><code>let y = 60;
+
+function setup() {
+  createCanvas(600, 420);
+  frameRate(60);
+}
+
+function draw() {
+  background(235);
+  y += 3; // Move 3 pixels every frame
+  fill(&quot;orange&quot;);
+  circle(200, y, 40);
+}</code></pre>
+    </section>
+    <section id="step2">
+      <span class="eyebrow">3–7 minutes</span>
+      <h2>2. Real acceleration and frame rate</h2>
+      <p>
+        Replace the code with this version. Gravity now changes speed over time.
+        Speed changes position.
+      </p>
+      <p>
+        <code>deltaTime</code> gives the previous frame’s duration in
+        milliseconds. Dividing by 1000 gives seconds. A frame lasting 1/30 of a
+        second advances the motion twice as far in time as one lasting 1/60 of a
+        second.
+      </p>
+      <p>
+        The position calculation is
+        <strong>distance = speed × time + ½ × acceleration × time²</strong>.
+        Then we update speed using
+        <strong>speed += acceleration × time</strong>. This gives the correct
+        constant-acceleration motion between collisions, regardless of how we
+        divide time into frames.
+      </p>
+      <p>
+        We use Earth gravity of about 9.81 m/s² and a drawing scale of 50 pixels
+        per metre. That makes the acceleration 490.5 pixels/s².
+      </p>
+      <p>
+        <strong>Try:</strong> Compare <code>frameRate(30)</code> and
+        <code>frameRate(60)</code>, restarting each time. The fall should take
+        about the same real time, although 60 FPS looks smoother. Restore 60 FPS
+        afterward.
+      </p>
+      <p>
+        <strong>Ask:</strong> What is the difference between moving the same
+        distance each frame and moving according to elapsed time?
+      </p>
+      <div class="codebar">
+        <span>Complete sketch · replace sketch.js</span
+        ><button onclick="copyCode(this)">Copy code</button>
+      </div>
+      <pre><code>let y = 60;
+let speed = 0;           // Pixels per second
+let gravity = 9.81 * 50; // Earth: m/s² × 50 pixels per metre
+
+function setup() {
+  createCanvas(600, 420);
+  frameRate(60);
+}
+
+function draw() {
+  background(235);
+  let dt = deltaTime / 1000; // Milliseconds → seconds
+
+  y += speed * dt + 0.5 * gravity * dt * dt;
+  speed += gravity * dt;
+
+  fill(&quot;orange&quot;);
+  circle(200, y, 40);
+}</code></pre>
+    </section>
+    <section id="step3">
+      <span class="eyebrow">7–10 minutes</span>
+      <h2>3. Make it bounce</h2>
+      <p>
+        Add the <code>if</code> block below the speed update, or replace the
+        whole sketch with this version.
+      </p>
+      <p>
+        The ball’s centre reaches the floor at <code>height - 20</code>, because
+        its radius is 20 pixels. We place it back above the floor and reverse
+        its downward speed. Multiplying by 0.85 keeps 85% of its impact speed,
+        so it loses energy at each bounce. The <code>speed &gt; 0</code> check
+        means “only while moving downward.”
+      </p>
+      <p>
+        <strong>Try:</strong> Change <code>0.85</code> to <code>1</code> for a
+        nearly elastic bounce, or <code>0.5</code> for a less bouncy ball.
+      </p>
+      <p>
+        <strong>Ask:</strong> Why do we reverse speed instead of reversing
+        gravity?
+      </p>
+      <p>
+        <strong>Teacher note:</strong> Collision detection happens once per
+        frame. The floor correction is approximate, so bounce heights can differ
+        a little with frame rate, and the ball may jitter when nearly stopped. A
+        production physics engine would handle impact timing and resting
+        contacts more carefully. Avoid leaving the running sketch in a
+        background tab; restart it when returning.
+      </p>
+      <div class="codebar">
+        <span>Complete sketch · replace sketch.js</span
+        ><button onclick="copyCode(this)">Copy code</button>
+      </div>
+      <pre><code>let y = 60;
+let speed = 0;           // Pixels per second
+let gravity = 9.81 * 50; // Earth: m/s² × 50 pixels per metre
+
+function setup() {
+  createCanvas(600, 420);
+  frameRate(60);
+}
+
+function draw() {
+  background(235);
+  let dt = deltaTime / 1000; // Milliseconds → seconds
+
+  y += speed * dt + 0.5 * gravity * dt * dt;
+  speed += gravity * dt;
+
+  if (y &gt;= height - 20 &amp;&amp; speed &gt; 0) {
+    y = height - 20;
+    speed = -speed * 0.85;
+  }
+
+  fill(&quot;orange&quot;);
+  circle(200, y, 40);
+}</code></pre>
+    </section>
+    <section id="step4">
+      <span class="eyebrow">10–13 minutes</span>
+      <h2>4. Add a green ball, twice the diameter</h2>
+      <p>
+        Keep the orange ball and add a green ball with diameter 80 pixels. Both
+        use the same gravity and bounce value, but each has its own position and
+        speed.
+      </p>
+      <p>
+        The green ball starts at y = 40 and the orange ball at y = 60. Their
+        bottom edges both start at y = 80, so they have the same distance to
+        fall before touching the floor. The green ball touches the floor when
+        its centre reaches <code>height - 40</code>.
+      </p>
+      <p>
+        <strong>Predict before running:</strong> Which will hit the floor first?
+      </p>
+      <p>
+        <strong>Discuss:</strong> They land together in this model. Size alone
+        does not change gravitational acceleration; we are ignoring air
+        resistance. “Twice the size” here means twice the diameter, not twice
+        the mass. If we started both centres at the same height, the larger ball
+        would touch first simply because its bottom is lower.
+      </p>
+      <div class="codebar">
+        <span>Complete sketch · replace sketch.js</span
+        ><button onclick="copyCode(this)">Copy code</button>
+      </div>
+      <pre><code>let y = 60;
+let speed = 0;
+let greenY = 40; // Same starting bottom edge: 80 pixels
+let greenSpeed = 0;
+let gravity = 9.81 * 50; // 50 pixels represents one metre
+let bounce = 0.85;
+
+function setup() {
+  createCanvas(600, 420);
+  frameRate(60);
+}
+
+function draw() {
+  background(235);
+  let dt = deltaTime / 1000;
+
+  // Orange ball: diameter 40, radius 20
+  y += speed * dt + 0.5 * gravity * dt * dt;
+  speed += gravity * dt;
+  if (y &gt;= height - 20 &amp;&amp; speed &gt; 0) {
+    y = height - 20;
+    speed = -speed * bounce;
+  }
+
+  // Green ball: diameter 80, radius 40
+  greenY += greenSpeed * dt + 0.5 * gravity * dt * dt;
+  greenSpeed += gravity * dt;
+  if (greenY &gt;= height - 40 &amp;&amp; greenSpeed &gt; 0) {
+    greenY = height - 40;
+    greenSpeed = -greenSpeed * bounce;
+  }
+
+  fill(&quot;orange&quot;);
+  circle(200, y, 40);
+  fill(&quot;green&quot;);
+  circle(400, greenY, 80);
+}</code></pre>
+    </section>
+    <section id="step5">
+      <span class="eyebrow">13–15 minutes</span>
+      <h2>5. Bounce on Mars</h2>
+      <p>
+        Change just the gravity line to <code>let gravity = 3.71 * 50;</code>.
+        Keep the same drawing scale, initial positions, and bounce value. The
+        full version below also changes the background to a sandy colour.
+      </p>
+      <p>Mars gravity is about 3.71 m/s², roughly 38% of Earth’s gravity.</p>
+      <p>
+        <strong>Predict:</strong> Will the balls fall more slowly? Will the
+        green ball now fall faster than the orange one?
+      </p>
+      <p>
+        <strong>Observe:</strong> Both fall more slowly, and each bounce takes
+        longer. Both balls still share the same acceleration.
+      </p>
+      <p>
+        <strong>Useful surprise:</strong> Dropping a ball from the same height
+        on Mars does not automatically give a higher rebound. It hits the ground
+        more slowly, too. With the same bounce factor, the ideal rebound height
+        above contact is the same fraction of its drop height: 0.85² ≈ 72%. The
+        animation’s approximate floor collision can introduce small differences.
+        A ball launched upward at the same initial speed would reach higher on
+        Mars.
+      </p>
+      <div class="codebar">
+        <span>Complete sketch · replace sketch.js</span
+        ><button onclick="copyCode(this)">Copy code</button>
+      </div>
+      <pre><code>let y = 60;
+let speed = 0;
+let greenY = 40; // Same starting bottom edge: 80 pixels
+let greenSpeed = 0;
+let gravity = 3.71 * 50; // Mars gravity; same scale as Earth
+let bounce = 0.85;
+
+function setup() {
+  createCanvas(600, 420);
+  frameRate(60);
+}
+
+function draw() {
+  background(245, 220, 205);
+  let dt = deltaTime / 1000;
+
+  // Orange ball: diameter 40, radius 20
+  y += speed * dt + 0.5 * gravity * dt * dt;
+  speed += gravity * dt;
+  if (y &gt;= height - 20 &amp;&amp; speed &gt; 0) {
+    y = height - 20;
+    speed = -speed * bounce;
+  }
+
+  // Green ball: diameter 80, radius 40
+  greenY += greenSpeed * dt + 0.5 * gravity * dt * dt;
+  greenSpeed += gravity * dt;
+  if (greenY &gt;= height - 40 &amp;&amp; greenSpeed &gt; 0) {
+    greenY = height - 40;
+    greenSpeed = -greenSpeed * bounce;
+  }
+
+  fill(&quot;orange&quot;);
+  circle(200, y, 40);
+  fill(&quot;green&quot;);
+  circle(400, greenY, 80);
+}</code></pre>
+    </section>
+    <footer>
+      <h2>Sources</h2>
+      <p>
+        - p5.js deltaTime:
+        <a
+          href="https://p5js.org/reference/p5/deltaTime/"
+          target="_blank"
+          rel="noopener"
+          >https://p5js.org/reference/p5/deltaTime/</a
+        >
+        - p5.js frameRate:
+        <a
+          href="https://p5js.org/reference/p5/frameRate/"
+          target="_blank"
+          rel="noopener"
+          >https://p5js.org/reference/p5/frameRate/</a
+        >
+        - NASA classroom activity with Earth and Mars gravity values:
+        <a
+          href="https://mars.nasa.gov/files/mep/robotics_activities.pdf"
+          target="_blank"
+          rel="noopener"
+          >https://mars.nasa.gov/files/mep/robotics_activities.pdf</a
+        >
+        - ESA Mars facts:
+        <a
+          href="https://www.esa.int/Science_Exploration/Space_Science/Mars_Express/Facts_about_Mars"
+          target="_blank"
+          rel="noopener"
+          >https://www.esa.int/Science_Exploration/Space_Science/Mars_Express/Facts_about_Mars</a
+        >
+      </p>
+    </footer>
+  </main>
+  <script>
+    async function copyCode(button) {
+      const code = button.parentElement.nextElementSibling;
+      try {
+        await navigator.clipboard.writeText(code.textContent);
+        button.textContent = "Copied!";
+        setTimeout(() => (button.textContent = "Copy code"), 1800);
+      } catch (e) {
+        const range = document.createRange();
+        range.selectNodeContents(code);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        button.textContent = "Selected — press ⌘C";
+      }
+    }
+  </script>
+</html>

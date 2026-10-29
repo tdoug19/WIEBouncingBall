@@ -18,17 +18,18 @@ gravity = -9.8        # gravity (m/s^2)
 ballPositionY = 390.0         # starting height
 deltaYPosition = 0.0
 yVelocity = 0.0          # velocity
-dt = 0.05 #50ms
+dt = 0.1 #50ms
 
 
 def fall():
-    global ballPositionY, deltaYPosition, yVelocity, dt
+    global ballPositionY, deltaYPosition, yVelocity
 
     while ballPositionY > 0.0:
         
         # Update physics
-        yVelocity += gravity * dt
         deltaYPosition = (yVelocity * dt) + (0.5 * gravity * dt *dt)
+        yVelocity += gravity * dt
+        
         ballPositionY += deltaYPosition
    
         ball.goto(300, ballPositionY)
